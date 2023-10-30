@@ -1,10 +1,13 @@
 //FUNCIONES FLECHA
 //1.1
 const saludar = () => "hola";
+console.log(saludar())
 //1.2
 const division = (a, b) => a / b;
+console.log(division(6,2));
 //1.3
 const miNombre = (nombre) => `Mi nombre es ${nombre}`;
+console.log(miNombre("paco"));
 //1.4
 const test2 = () => console.log("Funcion test 2 ejecutada.");
 const test1 = (callback) => callback();
@@ -49,6 +52,7 @@ gente.forEach(persona => {
         personasMayoresDe25.push(persona);
     }
 });
+console.log(personasMayoresDe25);
 //2.2
 const personasConJ = [];
 gente.forEach(persona => {
@@ -57,16 +61,19 @@ gente.forEach(persona => {
         personasConJ.push(persona);
     }
 });
-
+console.log(personasConJ);
 
 //MAP
 
-
-
 //3.1
-let personas25 = gente.map(persona => persona.edad >25);
-console.log(personas25);
-
+const mayoresDe25 = gente.map(persona => {
+  if (persona.edad > 25) {
+    return persona;
+  } else {
+    return null;
+  }
+}).filter(Boolean);
+console.log(mayoresDe25);
 
 //3.2
 let personasJ = gente.map(persona => {
@@ -80,7 +87,7 @@ console.log(personasJ);
 
 //3.3
 const numbers = [4, 5, 6, 7, 8, 9, 10];
-const numberPow = gente.map(number => Math.pow(number,number));
+const numberPow = numbers.map(number => Math.pow(number,number));
 console.log(numberPow);
 
 //Filter
