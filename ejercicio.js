@@ -44,7 +44,7 @@ let gente = [
 
 //2.1
 const personasMayoresDe25 = [];
-personas.forEach(persona => {
+gente.forEach(persona => {
     if (persona.edad > 25) {
         personasMayoresDe25.push(persona);
     }
