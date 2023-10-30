@@ -114,3 +114,109 @@ const numbers3 = [39, 2, 4, 25, 62];
 
 const sum = numbers3.reduce((a, b) => a * b, 1);
 console.log(sum);
+
+//EXTRAS
+
+//MAP
+const staff = [
+  {
+    name: "Pepe",
+    role: "The Boss",
+    hobbies: ["leer", "ver pelis"],
+  },
+  {
+        name: "Ana",
+    role: "becaria",
+    hobbies: ["nadar", "bailar"],
+  },
+  {
+    name: "Luis",
+    role: "programador",
+    hobbies: ["dormir", "comprar"],
+  },
+  {
+    name: "Carlos",
+    role: "secretario",
+    hobbies: ["futbol", "queso"],
+  },
+];
+
+const result = staff.map(member => `${member.name} es ${member.role} y le gusta ${member.hobbies.join(' y ')}`);
+console.log(result);
+
+
+const foodListEX = ["Pizza", "Ramen", "Paella", "Entrecot"];
+const result2 = foodListEX.map(food => {
+  switch (food) {
+    case "Pizza":
+      return `Como soy de Italia, amo comer ${food}`;
+    case "Ramen":
+      return `Como soy de Japón, amo comer ${food}`;
+    case "Paella":
+      return `Como soy de Valencia, amo comer ${food}`;
+    case "Entrecot":
+      return `Aunque no como carne, el ${food} es sabroso`;
+    default:
+      return `Me encanta ${food}`;
+  }
+});
+
+result2.forEach(sentence => console.log(sentence));
+
+//FILTER
+
+const inventory = [
+        {
+          name: 'Mobile phone',
+          price: 199
+        },
+        {
+          name: 'TV Samsung',
+          price: 459
+        },
+        {
+          name: 'Viaje a cancún',
+          price: 600
+        },
+        {
+          name: 'Mascarilla',
+          price: 1
+        }
+      ];
+      /*
+        [
+          'TV Samsung,',
+          'Viaje a Cancún'
+        ]
+      */
+const inventory2 = inventory.filter(inventory => inventory.price >= 300).map(price => price.name);
+console.log(inventory2);
+
+
+//REDUCE
+
+
+const sentenceElements = [
+    'Me',
+    'llamo',
+    /* Tu nombre aquí! */,
+    'y',
+    'quiero',
+    'sentir',
+    'la',
+    'fuerza',
+    'con',
+    'javascript'
+    ];
+   
+// Resultado--> 'Me llamo XX y quiero sentir la fuerza con javascript'
+
+const reducido = sentenceElements.reduce((sentence, word) => {
+    if (word === `/* Tu nombre aquí! */`) {
+        return sentence + 'Dani';
+    } else {
+        return sentence + ' ' + word;
+    }
+});
+
+console.log(reducido.trim());
